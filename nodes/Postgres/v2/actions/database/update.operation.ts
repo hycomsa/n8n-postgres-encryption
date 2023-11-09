@@ -24,7 +24,7 @@ import {
 } from '../../helpers/utils';
 
 import { optionsCollection } from '../common.descriptions';
-import { updateDisplayOptions } from '@utils/utilities';
+import { updateDisplayOptions } from '../../../../../utils/utilities';
 
 const properties: INodeProperties[] = [
 	{
