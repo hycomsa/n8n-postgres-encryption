@@ -37,7 +37,7 @@
     "nodes": [
       "dist/nodes/ExampleNode/ExampleNode.node.js",
       "dist/nodes/HttpBin/HttpBin.node.js",
-      "dist/nodes/PostgresEnc.node.js"
+      "dist/nodes/Postgres.node.js"
     ]
   },
   "devDependencies": {
