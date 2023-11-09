@@ -11,7 +11,7 @@ import type { PgpDatabase, QueriesRunner, QueryWithValues } from '../../helpers/
 import { replaceEmptyStringsByNulls } from '../../helpers/utils';
 
 import { optionsCollection } from '../common.descriptions';
-import { getResolvables, updateDisplayOptions } from '@utils/utilities';
+import { getResolvables, updateDisplayOptions } from '../../../../../utils/utilities';
 
 const properties: INodeProperties[] = [
 	{

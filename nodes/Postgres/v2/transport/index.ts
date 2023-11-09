@@ -7,7 +7,7 @@ import type { IDataObject } from 'n8n-workflow';
 
 import pgPromise from 'pg-promise';
 import type { PgpDatabase } from '../helpers/interfaces';
-import { formatPrivateKey } from '@utils/utilities';
+import { formatPrivateKey } from '../../../../utils/utilities';
 
 async function createSshConnectConfig(credentials: IDataObject) {
 	if (credentials.sshAuthenticateWith === 'password') {
