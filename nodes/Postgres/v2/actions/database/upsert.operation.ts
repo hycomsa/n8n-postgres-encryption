@@ -133,7 +133,7 @@ const properties: INodeProperties[] = [
 							loadOptionsMethod: 'getColumnsWithoutColumnToMatchOn',
 							loadOptionsDependsOn: ['schema.value', 'table.value'],
 						},
-						default: [],
+						default: [], // eslint-disable-line
 					},
 					{
 						displayName: 'Value',

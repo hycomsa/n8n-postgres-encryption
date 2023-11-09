@@ -97,7 +97,7 @@ export function parsePostgresError(
 		message,
 		description,
 		itemIndex,
-	});
+	} as any);
 }
 
 export function addWhereClauses(

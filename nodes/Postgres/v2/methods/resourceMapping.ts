@@ -1,8 +1,8 @@
-import type { ILoadOptionsFunctions, ResourceMapperFields, FieldType } from 'n8n-workflow';
+import type { ILoadOptionsFunctions } from 'n8n-workflow';
 import { getEnumValues, getEnums, getTableSchema, uniqueColumns } from '../helpers/utils';
 import { configurePostgres } from '../transport';
 
-const fieldTypeMapping: Partial<Record<FieldType, string[]>> = {
+const fieldTypeMapping: Partial<Record<any, string[]>> = {
 	string: ['text', 'varchar', 'character varying', 'character', 'char'],
 	number: [
 		'integer',
@@ -30,13 +30,13 @@ const fieldTypeMapping: Partial<Record<FieldType, string[]>> = {
 	array: ['ARRAY'],
 };
 
-function mapPostgresType(postgresType: string): FieldType {
-	let mappedType: FieldType = 'string';
+function mapPostgresType(postgresType: string): any {
+	let mappedType: any = 'string';
 
 	for (const t of Object.keys(fieldTypeMapping)) {
-		const postgresTypes = fieldTypeMapping[t as FieldType];
+		const postgresTypes = fieldTypeMapping[t as any];
 		if (postgresTypes?.includes(postgresType)) {
-			mappedType = t as FieldType;
+			mappedType = t as any;
 		}
 	}
 	return mappedType;
@@ -44,7 +44,7 @@ function mapPostgresType(postgresType: string): FieldType {
 
 export async function getMappingColumns(
 	this: ILoadOptionsFunctions,
-): Promise<ResourceMapperFields> {
+): Promise<any> {
 	const credentials = await this.getCredentials('postgres');
 
 	const { db, sshClient } = await configurePostgres(credentials);

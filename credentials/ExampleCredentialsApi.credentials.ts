@@ -7,13 +7,13 @@ import {
 
 export class ExampleCredentialsApi implements ICredentialType {
 	name = 'exampleCredentialsApi';
-	displayName = 'Example Credentials 0.1.4 API';
+	displayName = 'Example Credentials 0.1.6 API';
 	properties: INodeProperties[] = [
 		// The credentials to get from user and save encrypted.
 		// Properties can be defined exactly in the same way
 		// as node properties.
 		{
-			displayName: 'User Name 2',
+			displayName: 'User Name',
 			name: 'username',
 			type: 'string',
 			default: '',

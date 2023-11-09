@@ -126,6 +126,7 @@ export async function configurePostgres(
 						stream.pipe(socket);
 					},
 				);
+				return
 			}).listen(localPort, localHost);
 
 			proxy.on('error', (err) => {

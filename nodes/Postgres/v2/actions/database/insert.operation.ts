@@ -97,7 +97,7 @@ const properties: INodeProperties[] = [
 							loadOptionsMethod: 'getColumns',
 							loadOptionsDependsOn: ['schema.value', 'table.value'],
 						},
-						default: [],
+						default: [], // eslint-disable-line
 					},
 					{
 						displayName: 'Value',

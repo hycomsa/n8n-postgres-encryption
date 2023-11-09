@@ -9,7 +9,7 @@ export class Postgres implements ICredentialType {
 
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Host',
+			displayName: 'Host1.6',
 			name: 'host',
 			type: 'string',
 			default: 'localhost',
