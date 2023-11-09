@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-postgres-enc",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "n8n.io node for encyrpted Postgres connection configuration",
   "keywords": [
     "n8n-community-node-package"
@@ -37,7 +37,7 @@
     "nodes": [
       "dist/nodes/ExampleNode/ExampleNode.node.js",
       "dist/nodes/HttpBin/HttpBin.node.js",
-      "dist/nodes/Postgres.node.js"
+      "dist/nodes/Postgres/Postgres.node.js"
     ]
   },
   "devDependencies": {
