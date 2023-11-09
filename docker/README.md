@@ -37,17 +37,17 @@ The default name of the database, user and password for PostgreSQL can be change
 ## Testing
 
 ```bash
-psql postgresql://postgres@localhost:5432/postgres?sslmode=disable
+psql postgresql://postgres:postgres@ssltest-postgres.docker_default:5432/postgres?sslmode=disable
 ```
 
 ```bash
-psql postgresql://postgres@localhost:5432/postgres?sslmode=require
+psql postgresql://postgres:postgres@ssltest-postgres.docker_default:5432/postgres?sslmode=require
 ```
 
 ```bash
-psql postgresql://postgres@localhost:5432/postgres?sslmode=verify-ca
+psql postgresql://postgres:postgres@ssltest-postgres.docker_default:5432/postgres?sslmode=verify-ca
 ```
 
 ```bash
-psql postgresql://postgres@localhost:5432/postgres?sslmode=verify-full
+psql postgresql://postgres:postgres@ssltest-postgres.docker_default:5432/postgres?sslmode=verify-full
 ```
