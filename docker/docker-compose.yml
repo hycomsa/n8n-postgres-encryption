@@ -34,18 +34,29 @@ services:
     image: docker.n8n.io/n8nio/n8n:0.220.0
     restart: always
     environment:
+      - N8N_LOG_LEVEL=debug
+      - N8N_LOG_OUTPUT=console,file
+      - N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
+      - CUSTOM_EXTENSION_ENV=/home/node/.n8n/custom
       - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_HOST=ssltest-postgres.docker_default
       - DB_POSTGRESDB_PORT=5432
       - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
       - DB_POSTGRESDB_USER=${POSTGRES_NON_ROOT_USER}
       - DB_POSTGRESDB_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+      # - DB_POSTGRESDB_SSL_CA=/home/node/.n8n/ca.crt
+      # - DB_POSTGRESDB_SSL_CERT=/home/node/.n8n/n8nuser.crt
+      # - DB_POSTGRESDB_SSL_KEY=/home/node/.n8n/n8nuser.key
+      # - DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false
     ports:
       - 5678:5678
     links:
       - postgres
     volumes:
       - n8n_storage:/home/node/.n8n
+      - $PWD/ca.crt:/home/node/.n8n/ca.crt
+      - $PWD/n8nuser.crt:/home/node/.n8n/n8nuser.crt
+      - $PWD/n8nuser.key:/home/node/.n8n/n8nuser.key
     depends_on:
       postgres:
         condition: service_healthy
