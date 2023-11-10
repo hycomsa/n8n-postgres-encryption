@@ -18,13 +18,3 @@ chmod og-rwx server.key
 
 # Sign the server request with CA crt and key and generate server certificate
 openssl x509 -req -in server.csr -text -days 365 -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt
-
-
-### Example client
-
-# CSR
-openssl req -new -nodes -text -out client.csr -keyout client.key -subj "/CN=client"
-chmod og-rwx client.key
-
-# Sign the server request with CA crt and key and generate server certificate
-openssl x509 -req -in client.csr -text -days 365 -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt
