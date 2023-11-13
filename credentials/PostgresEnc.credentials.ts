@@ -1,15 +1,15 @@
 import type { ICredentialType, INodeProperties } from 'n8n-workflow';
 
-export class Postgres implements ICredentialType {
-	name = 'postgres';
+export class PostgresEnc implements ICredentialType {
+	name = 'postgresEnc';
 
-	displayName = 'Postgres';
-
-	documentationUrl = 'https://hycom.digital';
+	displayName = 'PostgresEnc';
+	// eslint-disable-next-line
+	documentationUrl = 'postgresEnc';
 
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Host1.6',
+			displayName: 'Host',
 			name: 'host',
 			type: 'string',
 			default: 'localhost',
@@ -80,12 +80,13 @@ export class Postgres implements ICredentialType {
 			name: 'caCertificate',
 			typeOptions: {
 				alwaysOpenEditWindow: true,
-				password: true,
+				password: false,
 			},
 			displayOptions: {
 				show: {
 					ssl: [
 						'verify',
+						'verify-full'
 					],
 				},
 			},
@@ -97,12 +98,13 @@ export class Postgres implements ICredentialType {
 			name: 'clientPrivateKey',
 			typeOptions: {
 				alwaysOpenEditWindow: true,
-				password: true,
+				password: false,
 			},
 			displayOptions: {
 				show: {
 					ssl: [
 						'verify',
+						'verify-full'
 					],
 				},
 			},
@@ -114,12 +116,13 @@ export class Postgres implements ICredentialType {
 			name: 'clientCertificate',
 			typeOptions: {
 				alwaysOpenEditWindow: true,
-				password: true,
+				password: false,
 			},
 			displayOptions: {
 				show: {
 					ssl: [
 						'verify',
+						'verify-full'
 					],
 				},
 			},
