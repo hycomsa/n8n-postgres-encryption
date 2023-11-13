@@ -50,6 +50,8 @@ services:
       - DB_POSTGRESDB_SSL_KEY=/home/node/.n8n/n8nuser.key
       - DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false
       - DATABASE_LOGGING_ENABLED=true
+      - DB_LOGGING_ENABLED=true
+      - DB_LOGGING_OPTIONS=all
     ports:
       - 5678:5678
     links:
