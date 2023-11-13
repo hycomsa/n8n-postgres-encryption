@@ -1,0 +1,73 @@
+version: '3.8'
+
+volumes:
+  db_storage:
+  n8n_storage:
+
+services:
+  postgres:
+    container_name: ssltest-postgres
+    image: postgres:11
+    command: -c ssl=on -c ssl_cert_file=/var/lib/postgresql/server.crt -c ssl_key_file=/var/lib/postgresql/server.key -c ssl_ca_file=/var/lib/postgresql/ca.crt
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=n8n
+      - POSTGRES_NON_ROOT_USER=n8nuser
+      - POSTGRES_NON_ROOT_PASSWORD=n8npassword
+      - PGUSER=postgres
+    volumes:
+      - db_storage:/var/lib/postgresql/data
+      - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+      - $PWD/ca.crt:/var/lib/postgresql/ca.crt
+      - $PWD/server.crt:/var/lib/postgresql/server.crt
+      - $PWD/server.key:/var/lib/postgresql/server.key
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready', '-d', 'postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    container_name: ssltest-n8n
+    image: docker.n8n.io/n8nio/n8n:0.220.0
+    #build:
+    #  context: ./n8n
+    #  dockerfile: ./n8nDockerfile
+    restart: always
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_NON_ROOT_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+      - N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
+      - CUSTOM_EXTENSION_ENV=/home/node/.n8n/custom
+      - DB_POSTGRESDB_SSL_CA=/home/node/.n8n/ca.crt
+ #     - DB_POSTGRESDB_SSL_CERT=/home/node/.n8n/n8nuser.crt
+ #     - DB_POSTGRESDB_SSL_KEY=/home/node/.n8n/n8nuser.key
+      - DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false
+      - N8N_LOG_LEVEL=verbose
+      - DB_LOGGING_ENABLED=true
+      - DB_LOGGING_OPTIONS=all
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+    ports:
+      - 5678:5678
+    links:
+      - postgres
+    volumes:
+      - $PWD/ca.crt:/home/node/.n8n/ca.crt
+      - $PWD/client.crt:/home/node/.n8n/n8nuser.crt
+      - $PWD/client.key:/home/node/.n8n/n8nuser.key
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  shell:
+    container_name: ssltest-shell
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always

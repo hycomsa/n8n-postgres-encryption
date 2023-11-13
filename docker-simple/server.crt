@@ -1,0 +1,68 @@
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number:
+            28:21:f5:11:20:80:d1:ab:1d:e7:70:dc:b5:d0:50:fb:c9:4e:7b:ce
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN = ca
+        Validity
+            Not Before: Nov  9 16:42:11 2023 GMT
+            Not After : Nov  8 16:42:11 2024 GMT
+        Subject: CN = ssltest-postgres.docker_default
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:ef:04:47:a4:1c:8f:d0:fd:b5:39:61:9e:05:e8:
+                    f0:0b:f4:cc:b0:e1:e6:bf:52:c6:ce:2e:67:12:66:
+                    83:71:2b:24:5c:e6:93:b5:af:19:1e:93:50:ab:4e:
+                    12:36:f9:fd:56:11:79:ae:4f:3a:f8:40:95:1e:e4:
+                    e9:d2:9f:85:5a:b8:a0:f4:a4:ca:55:65:77:92:3d:
+                    11:4f:d3:7e:8f:a7:7a:ce:78:a6:56:77:4c:9c:15:
+                    4c:75:06:ac:98:f8:ea:ea:07:6c:5a:fd:f3:e5:be:
+                    27:55:aa:c0:61:65:1f:21:75:3a:9f:75:b1:83:d3:
+                    6f:8a:18:4a:88:32:a8:18:dc:1f:23:dc:31:31:ab:
+                    77:82:96:22:be:36:15:79:28:57:3d:a6:a0:cb:5d:
+                    09:82:3e:d2:b0:61:75:1b:b4:37:be:63:30:58:49:
+                    71:d1:9f:d7:e9:10:ae:a5:42:a6:d3:39:c1:ed:46:
+                    e2:ba:21:0b:66:55:92:8f:cb:da:ea:a9:9c:d0:a3:
+                    a3:5a:b5:54:1b:7f:2b:e9:90:ee:9f:00:e7:61:4f:
+                    14:9b:1f:2b:94:e2:f6:20:f9:43:96:a0:fa:86:20:
+                    33:a6:ce:e4:56:c1:0b:73:02:e4:f1:42:67:f7:03:
+                    f6:0b:29:b3:0d:f6:4c:52:f7:c4:5d:fc:2c:4a:e9:
+                    2b:db
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        69:93:2e:85:e5:96:ee:43:37:43:53:3c:1f:2d:6f:32:58:6b:
+        f1:d7:fd:fd:20:ad:90:b4:15:66:0e:b0:34:0d:fe:b7:b5:60:
+        a9:41:97:d4:5e:75:a3:92:58:ee:09:03:de:a4:38:a7:80:f9:
+        9b:3b:3e:c0:22:38:6d:d6:6b:a5:bc:06:15:3f:ea:57:b9:75:
+        6d:fb:2d:71:c0:50:91:a5:09:eb:32:22:0b:d7:b7:96:61:ec:
+        34:6b:97:b3:57:0c:6d:31:37:81:41:18:88:60:99:65:c5:b6:
+        17:ef:5d:3a:9a:e1:9d:50:1a:14:9e:47:0e:a4:e8:d6:54:8f:
+        76:4d:a1:66:fc:3f:87:6c:67:09:81:11:61:2a:af:eb:39:0c:
+        92:05:fe:5e:98:be:3e:47:58:52:d8:99:6c:54:38:fc:53:e1:
+        ba:b0:76:64:c8:ba:30:01:ba:15:9d:89:cb:b0:02:85:e5:d0:
+        b5:0d:a3:61:10:0c:d2:b2:50:88:d1:54:41:35:a7:2d:b8:bc:
+        39:6f:e1:9c:10:8b:72:b0:e2:8f:ea:49:fb:f5:64:2f:e4:11:
+        d2:fc:e6:0c:6c:95:08:59:a9:e6:ab:32:3f:72:ba:23:ff:34:
+        bf:d4:96:84:a1:84:7c:a2:69:de:13:c4:f8:8f:60:4d:8e:b0:
+        09:23:ea:b8
+-----BEGIN CERTIFICATE-----
+MIICvjCCAaYCFCgh9REggNGrHedw3LXQUPvJTnvOMA0GCSqGSIb3DQEBCwUAMA0x
+CzAJBgNVBAMMAmNhMB4XDTIzMTEwOTE2NDIxMVoXDTI0MTEwODE2NDIxMVowKjEo
+MCYGA1UEAwwfc3NsdGVzdC1wb3N0Z3Jlcy5kb2NrZXJfZGVmYXVsdDCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAO8ER6Qcj9D9tTlhngXo8Av0zLDh5r9S
+xs4uZxJmg3ErJFzmk7WvGR6TUKtOEjb5/VYRea5POvhAlR7k6dKfhVq4oPSkylVl
+d5I9EU/Tfo+nes54plZ3TJwVTHUGrJj46uoHbFr98+W+J1WqwGFlHyF1Op91sYPT
+b4oYSogyqBjcHyPcMTGrd4KWIr42FXkoVz2moMtdCYI+0rBhdRu0N75jMFhJcdGf
+1+kQrqVCptM5we1G4rohC2ZVko/L2uqpnNCjo1q1VBt/K+mQ7p8A52FPFJsfK5Ti
+9iD5Q5ag+oYgM6bO5FbBC3MC5PFCZ/cD9gspsw32TFL3xF38LErpK9sCAwEAATAN
+BgkqhkiG9w0BAQsFAAOCAQEAaZMuheWW7kM3Q1M8Hy1vMlhr8df9/SCtkLQVZg6w
+NA3+t7VgqUGX1F51o5JY7gkD3qQ4p4D5mzs+wCI4bdZrpbwGFT/qV7l1bfstccBQ
+kaUJ6zIiC9e3lmHsNGuXs1cMbTE3gUEYiGCZZcW2F+9dOprhnVAaFJ5HDqTo1lSP
+dk2hZvw/h2xnCYERYSqv6zkMkgX+Xpi+PkdYUtiZbFQ4/FPhurB2ZMi6MAG6FZ2J
+y7ACheXQtQ2jYRAM0rJQiNFUQTWnLbi8OW/hnBCLcrDij+pJ+/VkL+QR0vzmDGyV
+CFmp5qsyP3K6I/80v9SWhKGEfKJp3hPE+I9gTY6wCSPquA==
+-----END CERTIFICATE-----

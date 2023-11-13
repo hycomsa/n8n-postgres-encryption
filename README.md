@@ -1,10 +1,10 @@
+
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# n8n-nodes-starter
+# n8n-postgres-encryption
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
-
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+This repo contains [n8n](n8n.io) node and credentials for a custom Postgres integration. It adds support for ssmode=verify* (similarly to [SSL support for MySQL](https://github.com/n8n-io/n8n/pull/1644/files)). Includes the node linter and other dependencies.
+Credentials testing for non API-based credentials does not work properly in n8n, so do not focus on errors related to "Couldn’t connect with these settings. No testing function found for this credential."
 
 ## Prerequisites
 
@@ -19,24 +19,21 @@ You need the following installed on your development machine:
 * Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
 
 
-## Using this starter
+## Using this repo
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+These are the basic steps for working with the repo. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
 
 1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
+2. Clone your repo:
     ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
+    git clone git@github.com:hycomsa/n8n-postgres-encryption.git
     ```
 3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+4. Update the `package.json` to match your details.
+5. Run `npm run build` to compile the codes.
+6. To install the node on an n8n:
+6.1. Follow instructions from [Install your node in a docker n8n instance](https://docs.n8n.io/integrations/creating-nodes/deploy/install-private-nodes/#install-your-node-in-a-docker-n8n-instance)
+6.2. For the approach with docker-compose from this repo, create directory `custom` in `/home/node/.n8n` and then inside this directory call `npm i n8n-nodes-postgres-enc`
 
 ## More information
 

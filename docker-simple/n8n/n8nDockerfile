@@ -1,0 +1,7 @@
+FROM docker.n8n.io/n8nio/n8n:0.220.0
+
+# Copy your custom CA certificate to the image
+COPY ca.crt /usr/local/share/ca-certificates/custom-ca.crt
+
+# Update the CA certificate store
+RUN update-ca-certificates
